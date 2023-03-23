@@ -101,6 +101,8 @@ body {
   color: #2e2f42;
 }
 
+/* ----Header menu----- */
+
 .menu {
   display: flex;
   align-items: center;
@@ -110,12 +112,18 @@ body {
   margin-right: 40px;
 }
 
+.menu-item {
+  
+}
+
 .menu-link {
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  height: 100%;
 
   color: var(--title-text-color);
   transition: color var(--transition);
@@ -124,6 +132,26 @@ body {
 .menu-link:hover,
 .menu-link:focus {
   color: var(--pressed-state-color);
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  opacity: 0;
+  transition: opacity var(--transition);
+
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 4px;
+  background-color: var(--pressed-state-color);
+}
+
+.menu-link:focus::after  {
+  opacity: 1;
 }
 
 .address {
@@ -552,6 +580,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 1;
   transition: opacity var(--transition);
 
   background-color: rgba(46, 47, 66, 0.4);
