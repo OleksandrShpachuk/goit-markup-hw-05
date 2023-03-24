@@ -70,7 +70,9 @@ body {
 /* Header */
 
 .header {
-  border-bottom: 1px solid var(--primary-accent-color);
+  border-bottom: 0.5px solid var(--primary-accent-color);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-menu {
@@ -112,10 +114,6 @@ body {
   margin-right: 40px;
 }
 
-.menu-item {
-  
-}
-
 .menu-link {
   position: relative;
   font-family: "Roboto", sans-serif;
@@ -124,6 +122,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   height: 100%;
+  padding-bottom: 27px;
 
   color: var(--title-text-color);
   transition: color var(--transition);
@@ -150,7 +149,12 @@ body {
   background-color: var(--pressed-state-color);
 }
 
-.menu-link:focus::after  {
+.menu-link:hover::after,
+.menu-link:focus::after {
+  opacity: 1;
+}
+
+.menu-link.active::after {
   opacity: 1;
 }
 
